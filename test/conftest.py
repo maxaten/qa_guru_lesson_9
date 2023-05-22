@@ -6,7 +6,7 @@ from selenium import webdriver
 @pytest.fixture(scope='function', autouse=True)
 def browser_conf():
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     browser.config.driver_options = chrome_options
     browser.driver.set_window_size(1600, 900)
     browser.config.base_url = 'https://demoqa.com'
