@@ -78,7 +78,7 @@ class RegistrationPage:
 
     def type_city_and_press_enter(self, city):
         browser.element('#city #react-select-4-input').type(city).press_enter()
-    @property
+
     def press_enter_by_confirm_registration(self):
         return browser.element('#submit').press_enter()
 

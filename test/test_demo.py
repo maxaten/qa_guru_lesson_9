@@ -21,7 +21,7 @@ def test_form_demo():
     registration_page.type_state_and_press_enter('Haryana')
     registration_page.type_city_and_press_enter('Karnal')
 
-    registration_page.press_enter_by_confirm_registration
+    registration_page.press_enter_by_confirm_registration()
     registration_page.assert_user_info(
                         'Student Name Alexander Pupkin',
                         'Student Email Pupkin@gmail.com',
