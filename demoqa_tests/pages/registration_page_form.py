@@ -1,9 +1,11 @@
-import os.path
+
+
 from selene import browser, have, command
 from demoqa_tests.data.users import User
-from datetime import datetime
+from demoqa_tests.path.resource import RESOURCES_PATH
 
 class RegistrationPage:
+
 
     def open(self):
         browser.open('/automation-practice-form')
@@ -25,7 +27,7 @@ class RegistrationPage:
         browser.element(f'.react-datepicker__day--0{10}:not(.react-datepicker__day--outside-month)').click()
         browser.element('#subjectsInput').type(user.subjects).press_enter()
         browser.element(f"label[for='hobbies-checkbox-{user.hobbies}']").click()
-        browser.element('#uploadPicture').send_keys(os.path.abspath(f'../resourses/{user.image}'))
+        browser.element('#uploadPicture').send_keys(RESOURCES_PATH + '\\' + f"{user.image}")
         browser.execute_script('window.scrollTo(0, document.body.scrollHeight)')
         browser.element('#currentAddress').click().type(user.address)
         browser.element('#state #react-select-3-input').type(user.state).press_enter()
