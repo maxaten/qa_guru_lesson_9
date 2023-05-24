@@ -1,6 +1,7 @@
 from demoqa_tests.pages.registration_page_form import RegistrationPage
 from demoqa_tests.data.users import user_1
 
+
 def test_form_demo():
     registration_page = RegistrationPage()
 
