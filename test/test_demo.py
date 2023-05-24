@@ -4,8 +4,7 @@ from demoqa_tests.data.users import user_1
 
 def test_form_demo():
     registration_page = RegistrationPage()
-
-    # open browser
+  
     registration_page.open()
 
     # filling in user fields

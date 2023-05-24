@@ -1,6 +1,6 @@
-from selene import browser, have, command
-from demoqa_tests.data.users import User
+from selene import browser, have,
 from demoqa_tests.path.resource import RESOURCES_PATH
+from demoqa_tests.data.users import User
 
 class RegistrationPage:
 
@@ -20,6 +20,36 @@ class RegistrationPage:
         browser.element('[for=gender-radio-1]').click()
         browser.element('#userNumber').click().type(user.phone_number)
         browser.element('#dateOfBirthInput').click()
+
+        
+
+    def type_subjects(self, *subjects):
+        subjects_input = browser.element('#subjectsInput')
+        for subject in subjects:
+            subjects_input.type(subject).press_enter()
+
+    def select_hobbies(self, *hobbies):
+        sport = 'hobbies-checkbox-1'
+        reading = 'hobbies-checkbox-2'
+        music = 'hobbies-checkbox-3'
+
+        for hobby in hobbies:
+            if hobby == 'sport':
+                checkbox = browser.element(f'[for={sport}]')
+            elif hobby == 'reading':
+                checkbox = browser.element(f'[for={reading}]')
+            elif hobby == 'music':
+                checkbox = browser.element(f'[for={music}]')
+            else:
+                continue
+
+            checkbox.click()
+
+
+    def chose_file_pafh(self, name):
+        
+
+    def scroll_page(self):
         browser.element('.react-datepicker__year-select').type('1990')
         browser.element('.react-datepicker__month-select').type('November')
         browser.element(f'.react-datepicker__day--0{10}:not(.react-datepicker__day--outside-month)').click()
