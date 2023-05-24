@@ -1,5 +1,3 @@
-
-
 from selene import browser, have, command
 from demoqa_tests.data.users import User
 from demoqa_tests.path.resource import RESOURCES_PATH
