@@ -1,4 +1,3 @@
-import os.path
 from selene import browser, have, command
 from demoqa_tests.path.resource import RESOURCES_PATH
 
