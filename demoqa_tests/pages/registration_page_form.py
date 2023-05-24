@@ -1,6 +1,6 @@
 import os.path
 from selene import browser, have, command
-
+from demoqa_tests.path.resource import RESOURCES_PATH
 
 
 class RegistrationPage:
@@ -60,14 +60,13 @@ class RegistrationPage:
             elif hobby == 'music':
                 checkbox = browser.element(f'[for={music}]')
             else:
-                # Обработка неверного хобби
                 continue
 
             checkbox.click()
 
 
-    def chose_file_pafh(self, path):
-        browser.element('#uploadPicture').send_keys(os.path.abspath(path))
+    def chose_file_pafh(self, name):
+        browser.element('#uploadPicture').send_keys(RESOURCES_PATH + '\\' + f"{name}")
 
     def scroll_page(self):
         browser.execute_script('window.scrollTo(0, document.body.scrollHeight)')

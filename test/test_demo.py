@@ -15,7 +15,7 @@ def test_form_demo():
 
     registration_page.type_subjects('Computer Science', 'English')
     registration_page.select_hobbies('sport')
-    registration_page.chose_file_pafh('../resourses/pocita.jpg')
+    registration_page.chose_file_pafh('pocita.jpg')
 
     registration_page.type_current_adress('914751, Оренбургская область, город Волоколамск, проезд Сталина, 09')
     registration_page.type_state_and_press_enter('Haryana')
